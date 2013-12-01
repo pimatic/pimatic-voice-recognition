@@ -1,0 +1,2 @@
+pimatic speak-api plugin
+========================

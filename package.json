@@ -1,0 +1,24 @@
+{ "name": "pimatic-speak-api",
+  "description": "speak-api plugin for pimatic",
+  "author": "Oliver Schneider <oliverschneider89+sweetpi@gmail.com> (http://sweetpi.de)",
+  "main": "speak-api.coffee",
+  "files": [
+    "speak-api.coffee",
+    "README.md"
+  ],
+  "version": "0.1.0",
+  "homepage": "http://github.com/pimatic/pimatic",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pimatic/pimatic.git/node_modules/pimatic-speak-api"
+  },
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "pimatic": "~0.1.0"
+  },
+  "engines": {
+    "node": ">0.8.x",
+    "npm": ">1.1.x"
+  }
+}
