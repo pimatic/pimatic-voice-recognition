@@ -4,7 +4,7 @@ module.exports = (env) ->
   Q = env.require 'q'
   assert = env.require 'cassert'
 
-  class SpeakFrontend extends env.plugins.Plugin
+  class SpeakApi extends env.plugins.Plugin
     actions: []
 
     init: (app, server, @config) =>
@@ -25,4 +25,4 @@ module.exports = (env) ->
           if found then break
         unless found then res.send 200, "Nicht gefunden: #{words[0]}" 
 
-  return new SpeakFrontend
+  return new SpeakApi
