@@ -5,24 +5,9 @@
   <span class="nv">assert = </span><span class="nx">env</span><span class="p">.</span><span class="nx">require</span> <span class="s">&#39;cassert&#39;</span>
 
   <span class="k">class</span> <span class="nx">SpeakApi</span> <span class="k">extends</span> <span class="nx">env</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">Plugin</span>
-    <span class="nv">actions: </span><span class="p">[]</span>
-
     <span class="nv">init: </span><span class="nf">(app, server, @config) =&gt;</span>
-      <span class="nv">_this = </span><span class="k">this</span>
-
-      <span class="nx">app</span><span class="p">.</span><span class="nx">get</span> <span class="s">&quot;/api/speak&quot;</span><span class="p">,</span> <span class="nf">(req, res, next) -&gt;</span>
-        <span class="nv">query = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;url&quot;</span><span class="p">).</span><span class="nx">parse</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">query</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">query</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">not</span> <span class="nx">query</span><span class="o">?</span><span class="p">)</span> <span class="o">or</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">query</span><span class="p">[</span><span class="s">&quot;word[]&quot;</span><span class="p">]</span> <span class="o">is</span> <span class="s">&quot;undefined&quot;</span><span class="p">)</span>
-          <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="mi">400</span><span class="p">,</span> <span class="s">&quot;Illegal Request&quot;</span>
-        <span class="nv">words = </span><span class="nx">query</span><span class="p">[</span><span class="s">&quot;word[]&quot;</span><span class="p">]</span>
-        <span class="nv">words = </span><span class="p">(</span><span class="k">if</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span> <span class="nx">words</span> <span class="k">then</span> <span class="nx">words</span> <span class="k">else</span> <span class="p">[</span><span class="nx">words</span><span class="p">])</span>
-        <span class="nv">found = </span><span class="kc">false</span>
-        <span class="k">for</span> <span class="nx">word</span> <span class="k">in</span> <span class="nx">words</span>
-          <span class="nv">found = </span><span class="nx">server</span><span class="p">.</span><span class="nx">ruleManager</span><span class="p">.</span><span class="nx">executeAction</span> <span class="nx">word</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nf">(e, message)-&gt;</span>
-            <span class="k">if</span> <span class="o">not</span> <span class="nx">e</span><span class="o">?</span> <span class="k">then</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="mi">200</span><span class="p">,</span> <span class="nx">message</span>
-            <span class="k">else</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="mi">200</span><span class="p">,</span> <span class="s">&quot;Ein Fehler ist aufgetreten: </span><span class="si">#{</span><span class="nx">e</span><span class="si">}</span><span class="s">&quot;</span>
-          <span class="k">if</span> <span class="nx">found</span> <span class="k">then</span> <span class="k">break</span>
-        <span class="k">unless</span> <span class="nx">found</span> <span class="k">then</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="mi">200</span><span class="p">,</span> <span class="s">&quot;Nicht gefunden: </span><span class="si">#{</span><span class="nx">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s">&quot;</span> 
+      <span class="nx">env</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">warn</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">      This plugin is deprecated and will be replaced with pimatic-voice-recognition.</span>
+<span class="s">      &quot;&quot;&quot;</span>
 
   <span class="k">return</span> <span class="k">new</span> <span class="nx">SpeakApi</span></div></div></div></div></body></html>
