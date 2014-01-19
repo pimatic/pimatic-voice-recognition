@@ -1,5 +1,5 @@
 { "name": "pimatic-speak-api",
-  "description": "speak-api plugin for pimatic",
+  "description": "This plugin is deprecated and will be replaced with pimatic-voice-recognition.",
   "author": "Oliver Schneider <oliverschneider89+sweetpi@gmail.com> (http://sweetpi.de)",
   "main": "speak-api.coffee",
   "files": [
@@ -7,7 +7,7 @@
     "speak-api.coffee",
     "README.md"
   ],
-  "version": "0.4.0",
+  "version": "0.5.0",
   "homepage": "http://github.com/sweetpi/pimatic",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "dependencies": {
   },
   "peerDependencies": {
-    "pimatic": "0.4.*"
+    "pimatic": "0.5.*"
   },
   "engines": {
     "node": ">0.8.x",
