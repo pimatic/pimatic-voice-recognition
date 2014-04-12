@@ -1,22 +1,23 @@
-{ "name": "pimatic-speak-api",
-  "description": "speak-api plugin for pimatic",
+{ "name": "pimatic-voice-recognition",
+  "description": "Adds a speak button to the webinterface for webkit speech inputs",
   "author": "Oliver Schneider <oliverschneider89+sweetpi@gmail.com> (http://sweetpi.de)",
-  "main": "speak-api.coffee",
+  "main": "voice-recognition.coffee",
   "files": [
     "doc",
-    "speak-api.coffee",
+    "app",
+    "voice-recognition.coffee",
     "README.md"
   ],
-  "version": "0.4.1",
-  "homepage": "http://github.com/sweetpi/pimatic",
+  "version": "0.7.0",
+  "homepage": "http://github.com/pimatic/pimatic",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sweetpi/pimatic-speak-api.git"
+    "url": "git://github.com/pimatic/pimatic-voice-recognition.git"
   },
   "dependencies": {
   },
   "peerDependencies": {
-    "pimatic": "0.4.*"
+    "pimatic": "0.7.*"
   },
   "engines": {
     "node": ">0.8.x",
