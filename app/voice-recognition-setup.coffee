@@ -25,7 +25,7 @@
 
     setup = =>
       unless "webkitSpeechRecognition" of window
-        pimatic.showToast "no chrome browser..."
+        pimatic.showToast "Sorry your browser is not supported."
       else
         recognition = new webkitSpeechRecognition()
         recognition.lang = "en-GB";
