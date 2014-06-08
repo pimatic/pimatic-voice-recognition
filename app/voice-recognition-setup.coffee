@@ -2,11 +2,9 @@
   recognition = null
 
   $(document).on "pagebeforecreate", '#index', (event) ->
-    errorCountButton = $('div#index #error-count')  
-    controlGroup = $ '<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"></div>'
-    talkButton = $ '<a id="talk" class=" ui-btn ui-btn-inline ui-mini ui-corner-all"></a>'
-    controlGroup.append errorCountButton.removeClass('ui-btn-right')
-    controlGroup.append talkButton
+    controlGroup = $('div#index [data-role=header] [data-role=controlgroup]') 
+    talkButton = $('<a id="talk" class=" ui-btn ui-btn-inline ui-mini ui-corner-all"></a>')
+    controlGroup.prepend talkButton
     talkButton.text __('Speak')
     $('div#index h3').after controlGroup
 
