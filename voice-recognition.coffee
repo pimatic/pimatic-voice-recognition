@@ -1,6 +1,5 @@
 module.exports = (env) ->
 
-  convict = env.require "convict"
   Q = env.require 'q'
   assert = env.require 'cassert'
 
