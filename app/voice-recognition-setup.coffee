@@ -3,7 +3,7 @@
 
   $(document).on "pagebeforecreate", '#index', (event) ->
     controlGroup = $('div#index [data-role=header] [data-role=controlgroup]') 
-    talkButton = $('<a id="talk" class=" ui-btn ui-btn-inline ui-mini ui-corner-all"></a>')
+    talkButton = $('<a id="talk" class=" ui-btn ui-btn-inline ui-mini"></a>')
     controlGroup.prepend talkButton
     talkButton.text __('Speak')
     $('div#index h3').after controlGroup
