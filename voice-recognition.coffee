@@ -27,11 +27,10 @@ module.exports = (env) ->
         words = (if Array.isArray words then words else [words])
         found = false
         for word in words
-          console.log "word:", word
-          context = @framework.ruleManager.createParseContext()
-          parseResult = @framework.ruleManager.parseAction('speech-action', word, context)
+          context = @framework.ruleManager._createParseContext()
+          parseResult = @framework.ruleManager._parseAction('speech-action', word, context)
           unless context.hasErrors()
-            @framework.ruleManager.executeAction(parseResult.action, false).then( (message) =>
+            @framework.ruleManager._executeAction(parseResult.action, false).then( (message) =>
               res.send 200, message
             ).catch( (e) =>
               res.send 200, "Error: #{e.message}"
