@@ -10,7 +10,7 @@ module.exports = (env) ->
       _this = this
 
       @framework.on("after init", =>
-        mobileFrontend = @framework.getPlugin 'mobile-frontend'
+        mobileFrontend = @framework.pluginManager.getPlugin 'mobile-frontend'
         if mobileFrontend?
           mobileFrontend.registerAssetFile 'js', 
             "pimatic-voice-recognition/app/voice-recognition-setup.coffee"
