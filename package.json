@@ -7,7 +7,8 @@
     "app",
     "voice-recognition.coffee",
     "voice-recognition-config-schema.coffee",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "version": "0.8.0",
   "homepage": "http://github.com/pimatic/pimatic",
@@ -15,11 +16,12 @@
     "type": "git",
     "url": "git://github.com/pimatic/pimatic-voice-recognition.git"
   },
+  "license": "GPL-2.0",
   "configSchema": "voice-recognition-config-schema.coffee",
   "dependencies": {
   },
   "peerDependencies": {
-    "pimatic": "0.8.*"
+    "pimatic": ">=0.8.0 <1.0.0"
   },
   "engines": {
     "node": ">0.8.x",

@@ -6,13 +6,12 @@ module.exports = (env) ->
   class VoiceRecognitionPlugin extends env.plugins.Plugin
     actions: []
 
-    init: (@app, @framework, @config) =>
-      _this = this
+    init: (app, @framework, @config) =>
 
       @framework.on("after init", =>
         mobileFrontend = @framework.pluginManager.getPlugin 'mobile-frontend'
         if mobileFrontend?
-          mobileFrontend.registerAssetFile 'js', 
+          mobileFrontend.registerAssetFile 'js',
             "pimatic-voice-recognition/app/voice-recognition-setup.coffee"
         else
           env.logger.warn "VoiceRecognitionPlugin could not find mobile-frontend. " +
@@ -22,7 +21,7 @@ module.exports = (env) ->
       app.post("/api/speech", (req, res, next) =>
         words = req.body.words
         unless words?
-          res.send 400, "Illegal Request"
+          res.status(400).send "Illegal Request"
           return
         words = (if Array.isArray words then words else [words])
         found = false
@@ -31,12 +30,12 @@ module.exports = (env) ->
           parseResult = @framework.ruleManager._parseAction('speech-action', word, context)
           unless context.hasErrors()
             @framework.ruleManager._executeAction(parseResult.action, false).then( (message) =>
-              res.send 200, message
+              res.status(200).send(message)
             ).catch( (e) =>
-              res.send 200, "Error: #{e.message}"
+              res.status(200).send "Error: #{e.message}"
             ).done()
             found = true
             break
-        unless found then res.send 200, "Could not execute: #{words[0]}" 
+        unless found then res.status(200).send "Could not execute: #{words[0]}" 
       )
   return new VoiceRecognitionPlugin
